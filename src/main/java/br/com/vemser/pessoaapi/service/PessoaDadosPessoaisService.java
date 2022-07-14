@@ -10,8 +10,11 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 public class PessoaDadosPessoaisService {
@@ -49,6 +52,10 @@ public class PessoaDadosPessoaisService {
     }
 
     public List<PessoaDadosPessoaisDTO> list() {
+//        List<PessoaDadosPessoaisCreateDTO> pessoaDadosPessoaisCreateDTOList = Stream.of(pessoaRepository.list(), dadosPessoaisService.getAll()
+//                        .stream().flatMap(Collection::stream)
+//                        .collect(Collectors.toList()));
+
         List<PessoaDadosPessoaisDTO> pessoaDadosPessoaisDTO = new ArrayList<>();
         List<PessoaDTO> pessoasDTO = pessoaService.list();
 

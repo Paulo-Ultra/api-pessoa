@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class PessoaDadosPessoaisCreateDTO {
+public class PessoaDadosPessoaisCreateDTO{
     @Schema(description = "Nome da Pessoa")
     @NotBlank(message = "Insira um nome!" )
     private String nome;
