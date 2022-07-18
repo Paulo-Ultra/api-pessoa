@@ -2,7 +2,6 @@ package br.com.vemser.pessoaapi.entity;
 
 import lombok.*;
 
-import javax.validation.constraints.*;
 import java.time.LocalDate;
 
 @Getter
