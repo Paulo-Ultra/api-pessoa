@@ -45,23 +45,23 @@ public class PessoaController {
     @Value("${spring.application.name}")
     private String app;
 
-    @GetMapping("/ambiente")
-    public String getAmbiente(){
-        return propertieReader.getAmbiente();
-    }
+//    @GetMapping("/ambiente")
+//    public String getAmbiente(){
+//        return propertieReader.getAmbiente();
+//    }
+//
+//    @GetMapping("/hello") //localhost:8080/pessoa/hello
+//    public String hello(){
+//        return "Hello " + app + "!";
+//    }
 
-    @GetMapping("/hello") //localhost:8080/pessoa/hello
-    public String hello(){
-        return "Hello " + app + "!";
-    }
-
-    @SneakyThrows
-    @GetMapping("/email")
-    public String email() {
-        emailService.sendSimpleMessage();
-        emailService.sendWithAttachment();
-        return "Enviando E-mail.. " + app + "!";
-    }
+//    @SneakyThrows
+//    @GetMapping("/email")
+//    public String email() {
+//        emailService.sendSimpleMessage();
+//        emailService.sendWithAttachment();
+//        return "Enviando E-mail.. " + app + "!";
+//    }
 
     @Operation(summary = "Criar pessoas", description = "Cria as pessoas do banco")
     @ApiResponses(

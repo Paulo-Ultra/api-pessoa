@@ -1,10 +1,8 @@
 package br.com.vemser.pessoaapi.service;
 
-import br.com.vemser.pessoaapi.dto.ContatoDTO;
 import br.com.vemser.pessoaapi.dto.EnderecoDTO;
-import br.com.vemser.pessoaapi.dto.PessoaCreateDTO;
 import br.com.vemser.pessoaapi.dto.PessoaDTO;
-import br.com.vemser.pessoaapi.entity.Pessoa;
+import br.com.vemser.pessoaapi.entity.PessoaEntity;
 import br.com.vemser.pessoaapi.enums.TipoEmail;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -106,11 +104,11 @@ public class EmailService {
             mimeMessageHelper.setTo(pessoaDTO.getEmail());
 
             if (emailTipo.equals(TipoEmail.CREATE.getTipo())){
-                mimeMessageHelper.setSubject("Assunto Criar Pessoa");
+                mimeMessageHelper.setSubject("Assunto Criar PessoaEntity");
             } else if (emailTipo.equals(TipoEmail.PUT.getTipo())) {
-                mimeMessageHelper.setSubject("Assunto Alterar Pessoa");
+                mimeMessageHelper.setSubject("Assunto Alterar PessoaEntity");
             } else {
-                mimeMessageHelper.setSubject("Assunto Deletar Pessoa");
+                mimeMessageHelper.setSubject("Assunto Deletar PessoaEntity");
             }
 
             mimeMessageHelper.setText(getContentFromTemplatePessoa(pessoaDTO, emailTipo), true);
@@ -138,7 +136,7 @@ public class EmailService {
         return html;
     }
 
-    public void sendEmailEndereco(Pessoa pessoa, EnderecoDTO enderecoDTO, String emailTipo) throws IOException, TemplateException {
+    public void sendEmailEndereco(PessoaEntity pessoa, EnderecoDTO enderecoDTO, String emailTipo) throws IOException, TemplateException {
         MimeMessage mimeMessage = emailSender.createMimeMessage();
         try {
 
@@ -162,7 +160,7 @@ public class EmailService {
         }
     }
 
-    public String getContentFromTemplateEndereco (Pessoa pessoa, EnderecoDTO enderecoDTO, String emailTipo) throws IOException, TemplateException {
+    public String getContentFromTemplateEndereco (PessoaEntity pessoa, EnderecoDTO enderecoDTO, String emailTipo) throws IOException, TemplateException {
         Map<String, Object> dados = new HashMap<>();
         dados.put("nome", pessoa.getNome());
         dados.put("email", from);

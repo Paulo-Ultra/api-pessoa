@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 @Data
 public class PessoaCreateDTO {
-    @Schema(description = "Nome da Pessoa")
+    @Schema(description = "Nome da PessoaEntity")
     @NotBlank(message = "Insira um nome!" )
     //Para evitar que o atributo tenha o getter por exemplo
 //    @Getter(AccessLevel.NONE)

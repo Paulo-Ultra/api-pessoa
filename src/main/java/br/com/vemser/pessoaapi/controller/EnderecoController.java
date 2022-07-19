@@ -2,7 +2,6 @@ package br.com.vemser.pessoaapi.controller;
 
 import br.com.vemser.pessoaapi.dto.EnderecoCreateDTO;
 import br.com.vemser.pessoaapi.dto.EnderecoDTO;
-import br.com.vemser.pessoaapi.entity.Endereco;
 import br.com.vemser.pessoaapi.exception.RegraDeNegocioException;
 import br.com.vemser.pessoaapi.service.EnderecoService;
 import freemarker.template.TemplateException;

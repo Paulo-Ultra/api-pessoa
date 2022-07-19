@@ -12,7 +12,7 @@ import javax.validation.constraints.Size;
 public class ContatoCreateDTO {
     private Integer idPessoa;
     @NotNull
-    @Schema(description = "Tpo de Contato")
+    @Schema(description = "Tpo de ContatoEntity")
     private TipoContato tipoContato;
     @NotBlank
     @Size(min = 1, max = 13, message = "Número pode ter até {max} números")

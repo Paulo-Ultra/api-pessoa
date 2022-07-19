@@ -2,7 +2,6 @@ package br.com.vemser.pessoaapi.controller;
 
 import br.com.vemser.pessoaapi.dto.ContatoCreateDTO;
 import br.com.vemser.pessoaapi.dto.ContatoDTO;
-import br.com.vemser.pessoaapi.entity.Contato;
 import br.com.vemser.pessoaapi.exception.RegraDeNegocioException;
 import br.com.vemser.pessoaapi.service.ContatoService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -101,7 +100,7 @@ public class ContatoController {
         return new ResponseEntity<>(contatoService.update(id, contatoAtualizar), HttpStatus.ACCEPTED);
     }
 
-    @Operation(summary = "Deleta Contato", description = "Deleta o contato do banco pelo ID")
+    @Operation(summary = "Deleta ContatoEntity", description = "Deleta o contato do banco pelo ID")
     @ApiResponses(
             value = {
                     @ApiResponse(responseCode = "204", description = "Deleta o contato"),
